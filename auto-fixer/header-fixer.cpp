@@ -348,8 +348,5 @@ void process_headers(std::vector<std::string>& file_content) {
   file_content = remove_using(file_content);
   file_content = remove_empty_lines(file_content);
   file_content = add_headers(file_content);
-  for (auto line : file_content) {
-    std::cout << line << std::endl;
-  }
 }
 

@@ -28,5 +28,11 @@ int main(int argc, char** argv) {
   }
   file.close();
   process_headers(file_content);
+  std::ofstream ofs;
+  ofs.open(file_path, std::ofstream::out | std::ofstream::trunc);
+  for (auto line : file_content) {
+    ofs << line << std::endl;
+  }
+  ofs.close();
   return EXIT_SUCCESS;
 }
