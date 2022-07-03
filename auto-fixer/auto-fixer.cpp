@@ -7,32 +7,15 @@
 #include <map>
 #include "header-fixer.h"
 
-int main(int argc, char** argv) {
-  if (argc < 2) {
-    std::cerr << "Please, provide path to file!" << std::endl;
-    exit(EXIT_FAILURE);
-  }
-  std::filesystem::path file_path{argv[1]};
-  if (!std::filesystem::exists(file_path)) {
-    std::cerr << "Invalid path" << std::endl;
-    exit(EXIT_FAILURE);
-  }
-  if (!std::filesystem::is_regular_file(file_path)) {
-    exit(EXIT_FAILURE);
-  }
-  std::vector<std::string> file_content;
-  std::ifstream file(file_path);
+int main() {
+  std::vector<std::string> content;
   std::string current_line;
-  while (std::getline(file, current_line)) {
-    file_content.push_back(current_line);
+  while (std::getline(std::cin, current_line)) {
+    content.push_back(current_line);
   }
-  file.close();
-  process_headers(file_content);
-  std::ofstream ofs;
-  ofs.open(file_path, std::ofstream::out | std::ofstream::trunc);
-  for (auto line : file_content) {
-    ofs << line << std::endl;
+  process_headers(content);
+  for (auto line : content) {
+    std::cout << line << std::endl;
   }
-  ofs.close();
   return EXIT_SUCCESS;
 }
