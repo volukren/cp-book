@@ -128,7 +128,7 @@ std::map<std::string, std::vector<std::string>> header_keys = {
                         }
   },
   {"algorithm",         {
-                          "all_of(", "any_of(", "none_of(", "for_each(", "for_each_n(", 
+                          "all_of(", "any_of(", "none_of(", "for_each(", "for_each_n(", "partial_sum", 
                           "count(", "count_if(","mismatch", "find(", "find_if(", 
                           "find_if_not(", "find_end(", "find_first_of(", "adjacent_find(",
                           "search(", "search_n(", "copy(", "copy_if(", "copy_n(", 
@@ -200,7 +200,7 @@ std::map<std::string, std::vector<std::string>> header_keys = {
                         }
   },
   {"numeric",           {
-                          "iota(", "accumulate(", "partial_sum(", "reduce(", 
+                          "iota(", "accumulate(", "reduce(", 
                           "transform_reduce(", "inner_product(", 
                           "adjacent_difference(", "inclusive_scan(", "exclusive_scan(", 
                           "transform_inclusive_scan(","transform_exclusive_scan(", 

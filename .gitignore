@@ -1,0 +1,4 @@
+.idea
+*.iml
+auto-fixer/auto-fixer
+auto-fixer/*.o
