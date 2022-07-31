@@ -37,20 +37,18 @@ struct Error {
         return *this << r;
     }
 };
-
 #define err Error()
-
 template <class T> void dout(string name, T a) {
     err << name << " : " << a << "\n";
 }
-
 template <class T1, class... T2> void dout(string names, T1 arg, T2... args) {
     err << names.substr(0, names.find(",")) << " : " << arg << " | ";
     dout(names.substr(names.find(",") + 2), args...);
 }
-
 #ifdef LOCAL
 #define debug(...) dout(#__VA_ARGS__, __VA_ARGS__)
+#define debugt(str, ...) err << str << ": "; dout(#__VA_ARGS__, __VA_ARGS__)
 #else
 #define debug(...) 42
+#define debugt(str, ...) 42
 #endif
