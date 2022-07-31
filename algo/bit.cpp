@@ -1,6 +1,6 @@
 class BIT {
-private:
+    private:
 
-public:
+    public:
 
 };
